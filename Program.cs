@@ -68,27 +68,34 @@ namespace Lab_3
 
 
                 }
-            }
-            bool response = true;
-            while (response)
-            {
-                Console.WriteLine("Would like to continue, y/n?"); 
-                string userAnswer = Console.ReadLine().ToLower();
-                if (userAnswer == "y")
+
+
+                bool response = true;
+                while (response)
                 {
-                    response = false;
-                    
+                    Console.WriteLine("Would like to continue, y/n?");
+                    string userAnswer = Console.ReadLine().ToLower();
+                    if (userAnswer == "y")
+                    {
+                        run = true;
+                        response = false;
+
+                    }
+                    else if (userAnswer == "n")
+                    {
+                        Console.WriteLine("Goodbye!");
+                        response = false;
+                        run = false;
+                    }
+                    else
+                    {
+                        Console.WriteLine("I'm sorry, please try again.");
+                    }
+
+
+
                 }
-                else if (userAnswer == "n")
-                {
-                    Console.WriteLine("Goodbye!");
-                    response = false;
-                    run = false;
-                }
-                else
-                {
-                    Console.WriteLine("I'm sorry, please try again.");
-                }
+           
             }
         }
     }
